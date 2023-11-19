@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label }}
+            {{ form.name }}
+            <br>
+            {{ form.age.label }}
+            {{ form.age }}
+            <br>
+            {{ form.submit_button }}
+        </form>
+        {% if users.__len__() > 0 %}
+            {% for user in users %}
+                {{ user['name'] }}
+                {{ user['age'] }}
+                <br>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
